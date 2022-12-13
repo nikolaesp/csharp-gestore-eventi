@@ -11,7 +11,7 @@ namespace GestoreEventi
     {
         private string titolo;
         private DateOnly data;
-        private int capienzamassima;
+        private readonly int capienzamassima;
         private int postiprenotati;
 
         public Evento(string titolo, DateOnly data, int capienzamassima, int postiprenotati)
@@ -84,7 +84,9 @@ namespace GestoreEventi
         }
         public override string ToString()
         {
-            return data.ToString("dd/M/yyyy")+" - "+this.titolo;
+            return data.ToString(format: "dd/M/yyyy")
+                   + " - "
+                   + this.titolo;
         }
     }
 }
