@@ -88,5 +88,10 @@ namespace GestoreEventi
                    + " - "
                    + this.titolo;
         }
+        public void StampaPosti() {
+            int disponibili = this.capienzamassima - this.postiprenotati;
+            Console.WriteLine("Numero di posti prenotati: " + this.postiprenotati);
+            Console.WriteLine("Numero di posti disponibili :" + disponibili);
+        }
     }
 }
