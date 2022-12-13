@@ -1,22 +1,24 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GestoreEventi;
+using System.Text;
 using System.Globalization;
+
+
+
+
 
 try
 {
-    Console.WriteLine("Nome di evento");
+    Console.Write("Inserisci il nome dell'evento: ");
     string nome = Console.ReadLine();
-    Console.WriteLine("Giorno di evento");
-    int day = int.Parse(Console.ReadLine());
-    Console.WriteLine("Meze di evento");
-    int month = int.Parse(Console.ReadLine());
-    Console.WriteLine("Anno di evento");
-    int year = int.Parse(Console.ReadLine());
-    Console.WriteLine("Max Capacita");
+    Console.Write("Inserisci la data dell'evento (gg/mm/yyyy): ");
+    string date = Console.ReadLine();
+    DateOnly data = DateOnly.Parse(date);
+   // Console.WriteLine(data.ToString());
+    Console.Write("Inserisci il numero di posti totali: ");
     int maxcap = int.Parse(Console.ReadLine());
-    Console.WriteLine("Prenotati");
+    Console.Write("Quanti posti desiderai prenotare? ");
     int reservations = int.Parse(Console.ReadLine());
-    DateOnly data= new DateOnly(year, month, day);
     Evento bubamara = new Evento(nome,data,maxcap,reservations);
     bubamara.PrenotaPosti(10);
     Console.WriteLine(bubamara.GetPostiPrenotati());

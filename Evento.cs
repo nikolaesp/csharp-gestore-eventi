@@ -82,7 +82,7 @@ namespace GestoreEventi
                 this.postiprenotati -= posti;
             }
         }
-        public string ToString()
+        public override string ToString()
         {
             return data.ToString("dd/M/yyyy")+" - "+this.titolo;
         }
