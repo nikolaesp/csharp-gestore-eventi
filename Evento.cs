@@ -9,7 +9,7 @@ namespace GestoreEventi
     internal class Evento
     {
         private string titolo;
-        DateOnly data;
+        private DateOnly data;
         private int capienzamassima;
         private int postiprenotati;
 
