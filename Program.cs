@@ -38,7 +38,7 @@ internal class Program
             Console.WriteLine("Il numero di eventi nel programa e: " + eventi.EventiPreseti());
             Console.WriteLine(eventi.ToString());
 
-            Console.Write("Inscerici data pred vedere qualle sonno le eventi :");
+            Console.Write("Inscerisci una data pred vedere qualle sonno le eventi: ");
             string date2 = Console.ReadLine();
             DateOnly data2 = DateOnly.Parse(date2);
             List<Evento> listaeventidata = eventi.EventiData(data2);
