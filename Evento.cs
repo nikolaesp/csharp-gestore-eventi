@@ -84,9 +84,7 @@ namespace GestoreEventi
         }
         public override string ToString()
         {
-            return data.ToString(format: "dd/M/yyyy")
-                   + " - "
-                   + this.titolo;
+            return this.data + " - " + this.titolo;
         }
         public void StampaPosti() {
             int disponibili = this.capienzamassima - this.postiprenotati;

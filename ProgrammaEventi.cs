@@ -14,7 +14,7 @@ namespace GestoreEventi
         public ProgrammaEventi(string titlo, List<Evento> eventi)
         {
             this.titlo = titlo;
-            List<Evento> lista = new List<Evento>();
+            this.eventi = eventi;
         }
         public void AggiungiEvento(Evento evento)
         {
@@ -22,7 +22,7 @@ namespace GestoreEventi
         }
         public List<Evento> EventiData(DateOnly eventidata)
         {
-            List<Evento> dataeventi = new List<Evento>();
+            List<Evento> dataeventi = new();
             
             for(int i = 0; i < eventi.Count; i++)
             {
@@ -38,25 +38,28 @@ namespace GestoreEventi
         {
             for (int i = 0; i < eventi.Count; i++)
             {
-                eventi[i].ToString();
+                Console.WriteLine(eventi[i].ToString());
             }
         }
         public int EventiPreseti()
         {
-            return eventi.Count;
+            int count = this.eventi.Count;
+            return count;
         }
-        public void EventDelete()
+        public void EventiDelete()
         {
-            eventi.Clear();
+            this.eventi.Clear();
 
         }
         public override string ToString()
         {
-            for (int i = 0; i < eventi.Count; i++)
+            StringBuilder t = new StringBuilder();
+            foreach (Evento evento in this.eventi)
             {
-                eventi[i].ToString();
+                t.AppendLine(evento.GetDate() + " - " + evento.GetTitolo());
             }
-            return ToString();
+           return t.ToString();
         }
+
     }
 }
