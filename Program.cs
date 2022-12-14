@@ -46,7 +46,7 @@ internal class Program
             ProgrammaEventi.StampaLista(listaeventidata);
 
             eventi.EventiDelete();
-            Console.WriteLine(eventi.ToString());
+            Console.WriteLine(eventi);
             Console.ReadLine();
             /*
             for (int i = 0; i < listaeventidata.Count; i++)
